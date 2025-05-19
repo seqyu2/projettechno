@@ -8,7 +8,7 @@ def display_clear():
 def on_gesture_up(gesture):
     display_clear()
     print('')
-    // TODO: le jeu en lui même, faut arrêter de faire le con avec les easter eggs
+    # TODO: le jeu en lui même, faut arrêter de faire le con avec les easter eggs
 
 def on_gesture_shake(gesture):
     sound.play_sample('rickroll')
