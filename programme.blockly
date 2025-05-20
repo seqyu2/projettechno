@@ -1,43 +1,23 @@
 <xml xmlns="https://developers.google.com/blockly/xml">
-  <block type="sensors_galaxia_onAccelerometerEvent" id="-qQHL:Gwtm:ru0Yxct=+" x="140" y="350">
-    <field name="GESTURE">up</field>
+  <variables>
+    <variable id="rckn~qrr?{T]QP]fh1!E">img</variable>
+    <variable id="!?V4|%KDLlW3A!s3H4Ts">autrejoueur</variable>
+  </variables>
+  <block type="sensors_galaxia_onAccelerometerEvent" id="Svm1f]aYncK{s6@bj8sQ" x="322" y="56">
+    <field name="GESTURE">shake</field>
     <statement name="DO">
-      <block type="display_galaxia_led_set_colors" id="a-pFtCWkatFdtmr/%0Bi">
-        <value name="RED">
-          <shadow type="math_number" id="sYO[!Xz7)cyge+d2#zKO">
-            <field name="NUM">255</field>
+      <block type="display_galaxia_show" id="4f*nbT=LvY%d0JVRon*y">
+        <value name="VALUE">
+          <shadow type="text" id="ue2FneJbgMBl[TLt`NBa">
+            <field name="TEXT">mettez nous 20 sur 20 mr vous etes le meilleur</field>
           </shadow>
         </value>
-        <value name="GREEN">
-          <shadow type="math_number" id="}NXNJ(osKOxh$jF)i@I!">
-            <field name="NUM">255</field>
-          </shadow>
-        </value>
-        <value name="BLUE">
-          <shadow type="math_number" id="2G#=y%%:}[h;@=YDNk_f">
-            <field name="NUM">255</field>
-          </shadow>
-        </value>
-        <next>
-          <block type="display_galaxia_show" id="JKCC+p/LHanNMEXOm;??">
-            <value name="VALUE">
-              <shadow type="text" id="H16([?l)}.u1UK5(tA$)">
-                <field name="TEXT">Haut : Pierre</field>
-              </shadow>
-            </value>
-            <next>
-              <block type="io_ifTouchSensitiveButtonTouched" id="C8UiVGcm%i@PZ6ThiGer">
-                <field name="BUTTON">n</field>
-                <field name="STATE">is_</field>
-              </block>
-            </next>
-          </block>
-        </next>
       </block>
     </statement>
   </block>
-  <block type="setup" id="i^}%b]ukK=bhXD9Q7E|;" deletable="false" x="720" y="347">
-    <statement name="LOOP_DO">
+  <block type="sensors_galaxia_onAccelerometerEvent" id="-qQHL:Gwtm:ru0Yxct=+" x="-164" y="233">
+    <field name="GESTURE">up</field>
+    <statement name="DO">
       <block type="display_galaxia_led_set_colors" id="d;sb0mR:T+iD,RNTx(Cr">
         <value name="RED">
           <shadow type="math_number" id="?#Tz.a@I:dd/dn[9UX`#">
@@ -55,12 +35,104 @@
           </shadow>
         </value>
         <next>
+          <block type="controls_if" id="X@(~{{~#T3il.wpwjl$1">
+            <mutation elseif="2" else="1"></mutation>
+            <value name="IF0">
+              <block type="io_isTouchSensitiveButtonTouched" id="_tLxg)~g*V:KZn?s)MLR">
+                <field name="BUTTON">n</field>
+                <field name="STATE">is_</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="display_galaxia_clear" id="z3|X=[=ci4^6``@tn[iJ">
+                <next>
+                  <block type="display_galaxia_show" id="O?=i~)1Fohc_;R`Zqyt8">
+                    <value name="VALUE">
+                      <shadow type="text" id="|c~%Gkw4%fyL$@8:vI2]">
+                        <field name="TEXT">Tu as joué : Pierre</field>
+                      </shadow>
+                      <block type="text_join" id="^9tMf5BHC]X`zId7@:ui">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="p5`~.tX-yZVDb!fLB6;B">
+                            <field name="TEXT">Tu as joué pierre; il/elle a joué</field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="variables_type_of" id="wvakdOE~Bu8DM#Xyf!_T">
+                            <field name="VAR" id="!?V4|%KDLlW3A!s3H4Ts">autrejoueur</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="setup" id="i^}%b]ukK=bhXD9Q7E|;" deletable="false" x="784" y="260">
+    <statement name="SETUP_DO">
+      <block type="sprite_image_create" id="@nOrCHjX(UE5S!QQLF#2">
+        <field name="VAR" id="rckn~qrr?{T]QP]fh1!E">img</field>
+        <value name="X">
+          <shadow type="math_number" id="!{a[wRl?Ory_nw2?J4~]">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="Y">
+          <shadow type="math_number" id="M{1eSysM~f|B`$5QkgT:">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="SCALE">
+          <shadow type="math_number" id=".@ojRm9bnUm%@b5KS|;7">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="PATH">
+          <shadow type="text" id="yB[?TdUca9rXfR%D7A0]">
+            <field name="TEXT"></field>
+          </shadow>
+        </value>
+        <next>
           <block type="display_galaxia_show" id="jG!BAW?8[dU`)GVNvb//">
             <value name="VALUE">
               <shadow type="text" id="}}@GWQFDo@CxC)$3hlC)">
-                <field name="TEXT">ORIENTE LA CARTE VERS LE HAUT RAAAH</field>
+                <field name="TEXT">Oriente la carte vers le haut pour jouer</field>
               </shadow>
             </value>
+            <next>
+              <block type="display_galaxia_show" id="JKCC+p/LHanNMEXOm;??">
+                <value name="VALUE">
+                  <shadow type="text" id="H16([?l)}.u1UK5(tA$)">
+                    <field name="TEXT">Controles : Haut : Pierre / Gauche : Feuille / Droite : Ciseaux</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="display_galaxia_led_set_colors" id="pE+mIAj~vf~bK$8ebvQz">
+                    <value name="RED">
+                      <shadow type="math_number" id="(OW$ZM.ZK!G#s{+Kc/_Y">
+                        <field name="NUM">255</field>
+                      </shadow>
+                    </value>
+                    <value name="GREEN">
+                      <shadow type="math_number" id="YEu@]8|SFT6oErZnyM{3">
+                        <field name="NUM">255</field>
+                      </shadow>
+                    </value>
+                    <value name="BLUE">
+                      <shadow type="math_number" id="v9_!I]E*ja~/flx%FVF.">
+                        <field name="NUM">255</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
           </block>
         </next>
       </block>
