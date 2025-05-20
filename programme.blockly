@@ -1,0 +1,69 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="sensors_galaxia_onAccelerometerEvent" id="-qQHL:Gwtm:ru0Yxct=+" x="140" y="350">
+    <field name="GESTURE">up</field>
+    <statement name="DO">
+      <block type="display_galaxia_led_set_colors" id="a-pFtCWkatFdtmr/%0Bi">
+        <value name="RED">
+          <shadow type="math_number" id="sYO[!Xz7)cyge+d2#zKO">
+            <field name="NUM">255</field>
+          </shadow>
+        </value>
+        <value name="GREEN">
+          <shadow type="math_number" id="}NXNJ(osKOxh$jF)i@I!">
+            <field name="NUM">255</field>
+          </shadow>
+        </value>
+        <value name="BLUE">
+          <shadow type="math_number" id="2G#=y%%:}[h;@=YDNk_f">
+            <field name="NUM">255</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="display_galaxia_show" id="JKCC+p/LHanNMEXOm;??">
+            <value name="VALUE">
+              <shadow type="text" id="H16([?l)}.u1UK5(tA$)">
+                <field name="TEXT">Haut : Pierre</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="io_ifTouchSensitiveButtonTouched" id="C8UiVGcm%i@PZ6ThiGer">
+                <field name="BUTTON">n</field>
+                <field name="STATE">is_</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="setup" id="i^}%b]ukK=bhXD9Q7E|;" deletable="false" x="720" y="347">
+    <statement name="LOOP_DO">
+      <block type="display_galaxia_led_set_colors" id="d;sb0mR:T+iD,RNTx(Cr">
+        <value name="RED">
+          <shadow type="math_number" id="?#Tz.a@I:dd/dn[9UX`#">
+            <field name="NUM">255</field>
+          </shadow>
+        </value>
+        <value name="GREEN">
+          <shadow type="math_number" id="z:~iwyJ4oURc+}9e/r9U">
+            <field name="NUM">255</field>
+          </shadow>
+        </value>
+        <value name="BLUE">
+          <shadow type="math_number" id=";.-q1q-+gLa/X2IWBH#0">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="display_galaxia_show" id="jG!BAW?8[dU`)GVNvb//">
+            <value name="VALUE">
+              <shadow type="text" id="}}@GWQFDo@CxC)$3hlC)">
+                <field name="TEXT">ORIENTE LA CARTE VERS LE HAUT RAAAH</field>
+              </shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
