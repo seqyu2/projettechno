@@ -1,5 +1,6 @@
 <xml xmlns="https://developers.google.com/blockly/xml">
   <variables>
+    <variable id="H8)g%n2u;(v4m*2#a9|Y">valeurRecue</variable>
     <variable id="b|0sctE.ZBjLL}Ty]-,!">tuasjoue</variable>
   </variables>
   <block type="sensors_galaxia_onAccelerometerEvent" id="Svm1f]aYncK{s6@bj8sQ" x="158" y="68">
@@ -14,8 +15,19 @@
       </block>
     </statement>
   </block>
-  <block type="sensors_galaxia_onAccelerometerEvent" id="-qQHL:Gwtm:ru0Yxct=+" x="-148" y="251">
-    <field name="GESTURE">up</field>
+  <block type="setup" id="i^}%b]ukK=bhXD9Q7E|;" deletable="false" x="964" y="150">
+    <statement name="SETUP_DO">
+      <block type="display_galaxia_show" id="Hp,K{]$*`/:a$neE.):%">
+        <value name="VALUE">
+          <shadow type="text" id="+GoDx4%_CgzrnC[W$+`F">
+            <field name="TEXT">Oriente la Galaxia vers le haut, puis mets la face vers le haut.</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="sensors_galaxia_onAccelerometerEvent" id="-qQHL:Gwtm:ru0Yxct=+" x="509" y="435">
+    <field name="GESTURE">face up</field>
     <statement name="DO">
       <block type="display_galaxia_led_set_colors" id="d;sb0mR:T+iD,RNTx(Cr">
         <value name="RED">
@@ -34,181 +46,567 @@
           </shadow>
         </value>
         <next>
-          <block type="controls_if" id="X@(~{{~#T3il.wpwjl$1">
-            <mutation elseif="2"></mutation>
-            <value name="IF0">
-              <block type="logic_compare" id="7F8V%}`Z]66Hj9Y4p=T.">
-                <field name="OP">EQ</field>
-                <value name="A">
-                  <block type="variables_get" id="}CbTt7o!x*T_UR1;[T^r">
-                    <field name="VAR" id="b|0sctE.ZBjLL}Ty]-,!">tuasjoue</field>
-                  </block>
-                </value>
-                <value name="B">
-                  <block type="text" id="~5?jY6x7d=O4AuSQ]qKl">
-                    <field name="TEXT">1</field>
-                  </block>
-                </value>
-              </block>
-            </value>
-            <statement name="DO0">
-              <block type="communication_galaxia_radioSendValue" id="*n#kPtgYfwvm0{$zMXhC">
-                <value name="VALUE">
-                  <shadow type="text" id="TvT0OYvCJZt6/Zx{600v">
-                    <field name="TEXT">pierre</field>
-                  </shadow>
-                </value>
-                <next>
-                  <block type="display_galaxia_show" id="O?=i~)1Fohc_;R`Zqyt8">
-                    <value name="VALUE">
-                      <shadow type="text" id="|c~%Gkw4%fyL$@8:vI2]">
-                        <field name="TEXT">Tu as joué : Pierre</field>
-                      </shadow>
-                      <block type="text_join" id="^9tMf5BHC]X`zId7@:ui">
-                        <mutation items="2"></mutation>
-                        <value name="ADD0">
-                          <block type="text" id="p5`~.tX-yZVDb!fLB6;B">
-                            <field name="TEXT">Tu as joué PIERRE; il/elle a joué</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="controls_if" id="?P/l0g=d+Z.aFzD@$a,R"></block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </statement>
-            <value name="IF1">
-              <block type="logic_compare" id="%VMeS*^Ol}9{v4,f7f=k">
-                <field name="OP">EQ</field>
-                <value name="A">
-                  <block type="variables_get" id="@z+6G[$27t_xJDp*q^VR">
-                    <field name="VAR" id="b|0sctE.ZBjLL}Ty]-,!">tuasjoue</field>
-                  </block>
-                </value>
-                <value name="B">
-                  <block type="text" id="N+._GWY_zPn$fEB,C%Bj">
-                    <field name="TEXT">2</field>
-                  </block>
-                </value>
-              </block>
-            </value>
-            <statement name="DO1">
-              <block type="communication_galaxia_radioSendValue" id="kIt9g?h2qrdJZ;,$+%B-">
-                <value name="VALUE">
-                  <shadow type="text" id="U$Cz9v6DBl@XI0MtHFos">
-                    <field name="TEXT">feuille</field>
-                  </shadow>
-                </value>
-                <next>
-                  <block type="display_galaxia_show" id="dk%=pR|U^S8-/pnXWn1X">
-                    <value name="VALUE">
-                      <shadow type="text" id="OuFj1J(p;3b#w;|sr1T]">
-                        <field name="TEXT">Tu as joué : Pierre</field>
-                      </shadow>
-                      <block type="text_join" id="`c3[pyRWnjX=kCfryF^r">
-                        <mutation items="2"></mutation>
-                        <value name="ADD0">
-                          <block type="text" id="o.~r/P8%`F=5$yzVg%6K">
-                            <field name="TEXT">Tu as joué FEUILLE; il/elle a joué</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </next>
-              </block>
-            </statement>
-            <value name="IF2">
-              <block type="logic_compare" id="q#Ly0P{rx.%d^_XPBxm#">
-                <field name="OP">EQ</field>
-                <value name="A">
-                  <block type="variables_get" id="Z6yuHr{qc9[l8ps~8L{^">
-                    <field name="VAR" id="b|0sctE.ZBjLL}Ty]-,!">tuasjoue</field>
-                  </block>
-                </value>
-                <value name="B">
-                  <block type="text" id="ThN4qYChZ0:O+l|JaL~M">
-                    <field name="TEXT">3</field>
-                  </block>
-                </value>
-              </block>
-            </value>
-            <statement name="DO2">
-              <block type="communication_galaxia_radioSendValue" id="O9d`{P6uI?Y4=MKk`Hee">
-                <value name="VALUE">
-                  <shadow type="text" id="R1;Wd][.}c/dYhSbv}Or">
-                    <field name="TEXT">ciseaux</field>
-                  </shadow>
-                </value>
-                <next>
-                  <block type="display_galaxia_show" id="jb`=Lg/d;ih$PBDmvr01">
-                    <value name="VALUE">
-                      <shadow type="text">
-                        <field name="TEXT">Tu as joué : Pierre</field>
-                      </shadow>
-                      <block type="text_join" id="].:%5b%kev[9arVEa0?j">
-                        <mutation items="2"></mutation>
-                        <value name="ADD0">
-                          <block type="text" id="IEM{lL?m]S3J#7UAF2+t">
-                            <field name="TEXT">Tu as joué CISEAUX; il/elle a joué</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </next>
-              </block>
-            </statement>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="setup" id="i^}%b]ukK=bhXD9Q7E|;" deletable="false" x="672" y="235">
-    <statement name="SETUP_DO">
-      <block type="variables_set" id="Z-XO*XO:(Vowj+a7zNdZ">
-        <field name="VAR" id="b|0sctE.ZBjLL}Ty]-,!">tuasjoue</field>
-        <value name="VALUE">
-          <shadow type="math_number" id="SK9MR:NeK01oI7Q`KV!T">
-            <field name="NUM">0</field>
-          </shadow>
-          <block type="math_random_int" id="Y4wg*DaKm3|t)_kknXgy">
-            <value name="FROM">
-              <shadow type="math_number" id="**@uWK[U[VFa5e(va{t`">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
-            <value name="TO">
-              <shadow type="math_number" id="P/v8:i94Z$K_(r(`z(.t">
-                <field name="NUM">3</field>
-              </shadow>
-            </value>
-          </block>
-        </value>
-        <next>
-          <block type="display_galaxia_show" id="}5fp%%S:~PHQil@ebks(">
+          <block type="variables_set" id="Z-XO*XO:(Vowj+a7zNdZ">
+            <field name="VAR" id="b|0sctE.ZBjLL}Ty]-,!">tuasjoue</field>
             <value name="VALUE">
-              <shadow type="text" id="G?~~iP?Vom6]06OFyh(P">
-                <field name="TEXT">Programme disponible sur github.com/seqyu2/projettechno</field>
+              <shadow type="math_number" id="SK9MR:NeK01oI7Q`KV!T">
+                <field name="NUM">0</field>
               </shadow>
+              <block type="math_random_int" id="Y4wg*DaKm3|t)_kknXgy">
+                <value name="FROM">
+                  <shadow type="math_number" id="**@uWK[U[VFa5e(va{t`">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="TO">
+                  <shadow type="math_number" id="P/v8:i94Z$K_(r(`z(.t">
+                    <field name="NUM">3</field>
+                  </shadow>
+                </value>
+              </block>
             </value>
             <next>
-              <block type="display_galaxia_show" id="PQ_hQ2?p4r|o6L((_]G]">
+              <block type="variables_set" id="91UYsE_$0X/6P`/$;jiW">
+                <field name="VAR" id="H8)g%n2u;(v4m*2#a9|Y">valeurRecue</field>
                 <value name="VALUE">
-                  <shadow type="text" id="XNesXpMb@bRvAn6-T=Zy">
-                    <field name="TEXT">Sous license GNU GPL v3</field>
+                  <shadow type="math_number">
+                    <field name="NUM">0</field>
                   </shadow>
-                </value>
-                <next>
-                  <block type="display_galaxia_show" id="jG!BAW?8[dU`)GVNvb//">
-                    <value name="VALUE">
-                      <shadow type="text" id="}}@GWQFDo@CxC)$3hlC)">
-                        <field name="TEXT">Oriente la carte vers le haut pour jouer</field>
+                  <block type="math_random_int" id="EwUm`y=#$|XWas#4/@V_">
+                    <value name="FROM">
+                      <shadow type="math_number" id="80nM)KlM[$dDS-.Y9mEE">
+                        <field name="NUM">1</field>
                       </shadow>
                     </value>
+                    <value name="TO">
+                      <shadow type="math_number" id="qL56-)D[FoK7^mO9.xSU">
+                        <field name="NUM">3</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_if" id="X@(~{{~#T3il.wpwjl$1">
+                    <mutation elseif="2"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="7F8V%}`Z]66Hj9Y4p=T.">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="}CbTt7o!x*T_UR1;[T^r">
+                            <field name="VAR" id="b|0sctE.ZBjLL}Ty]-,!">tuasjoue</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="eaf#%)dbp2ipGF=H-G6X">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="controls_if" id="I]wcy4hSBhYyH4Yk:k|L">
+                        <mutation elseif="1" else="1"></mutation>
+                        <value name="IF0">
+                          <block type="logic_compare" id="CPEpO]ydwBAx}@6*N1~M">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id="-ce1s[{0ty-wQsex8P;9">
+                                <field name="VAR" id="H8)g%n2u;(v4m*2#a9|Y">valeurRecue</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="~8g.Wk9NhDU5@kjvf?Kx">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="display_galaxia_led_set_colors" id="RG[xmhuaH^:Fd=e4L@ZG">
+                            <value name="RED">
+                              <shadow type="math_number" id=",lum(QF(2-B4cg#{AtUf">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                            <value name="GREEN">
+                              <shadow type="math_number" id="+RHsNbHra;o)Af90x-C-">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="BLUE">
+                              <shadow type="math_number" id="V^|a^]apAI$.1n-1z?9;">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="display_galaxia_show" id="O?=i~)1Fohc_;R`Zqyt8">
+                                <value name="VALUE">
+                                  <shadow type="text" id="|c~%Gkw4%fyL$@8:vI2]">
+                                    <field name="TEXT">Tu as joué : Pierre</field>
+                                  </shadow>
+                                  <block type="text_join" id="^9tMf5BHC]X`zId7@:ui">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="p5`~.tX-yZVDb!fLB6;B">
+                                        <field name="TEXT">Pierre | </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="text" id="5WmZI9Fgnv}Z#*j2h9f_">
+                                        <field name="TEXT">Feuille</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <value name="IF1">
+                          <block type="logic_compare" id="k+Rf~[+wplYqD,N.Bao4">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id="EY;XOjAF|,KQbsvZKw$k">
+                                <field name="VAR" id="H8)g%n2u;(v4m*2#a9|Y">valeurRecue</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="D)i%;P?kBM(GjXX3xj25">
+                                <field name="NUM">3</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO1">
+                          <block type="display_galaxia_led_set_colors" id="gvwAyP~(T$7;AyfCL2%H">
+                            <value name="RED">
+                              <shadow type="math_number" id="Z}Azui6;Dlam8l,}mrg1">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="GREEN">
+                              <shadow type="math_number" id="0fzYas/DbZx~8+y:^U6M">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                            <value name="BLUE">
+                              <shadow type="math_number" id="93I0N[X$^*r1@?#:r]On">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="display_galaxia_show" id="`KE5:q]nB9-m=hFHDvou">
+                                <value name="VALUE">
+                                  <shadow type="text">
+                                    <field name="TEXT">Tu as joué : Pierre</field>
+                                  </shadow>
+                                  <block type="text_join" id="c;s0)@h[:?DlG1ze~vzj">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="qhj!k#W*4H9A!z`9Lu|K">
+                                        <field name="TEXT">Pierre | </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="text" id="Uosj;MFa{lPtD0sr!Nh8">
+                                        <field name="TEXT">Ciseaux</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <statement name="ELSE">
+                          <block type="display_galaxia_led_set_colors" id="GC$OU}#+40Z.dcA4kc8*">
+                            <value name="RED">
+                              <shadow type="math_number" id="d$pK7M0o]b3LLggTR,-l">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="GREEN">
+                              <shadow type="math_number" id=";M7ees.Ae@M=tI$PF,Ws">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="BLUE">
+                              <shadow type="math_number" id="+]F_a%mbwG3lkHHf^~Of">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="display_galaxia_show" id="L@ZPw1kB1%4nj[]DHT,V">
+                                <value name="VALUE">
+                                  <shadow type="text">
+                                    <field name="TEXT">Tu as joué : Pierre</field>
+                                  </shadow>
+                                  <block type="text_join" id="K`8B9]n?DI4D10QF+qUt">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="LM9KS*?u@*{QJU@r]xSs">
+                                        <field name="TEXT">Pierre | </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="text" id=":ao7K.FV|U9E^/O1?SL|">
+                                        <field name="TEXT">Pierre</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                    <value name="IF1">
+                      <block type="logic_compare" id="%VMeS*^Ol}9{v4,f7f=k">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="@z+6G[$27t_xJDp*q^VR">
+                            <field name="VAR" id="b|0sctE.ZBjLL}Ty]-,!">tuasjoue</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="ce]u!s@5xD)H)^7PTQLS">
+                            <field name="NUM">2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO1">
+                      <block type="controls_if" id="K3FO?FtNw-74|!`$F/B!">
+                        <mutation elseif="1" else="1"></mutation>
+                        <value name="IF0">
+                          <block type="logic_compare" id="zpxD)$/)#ctJ@1)n:yWe">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id="`?I*9:b*%]g;NNSkn-~#">
+                                <field name="VAR" id="H8)g%n2u;(v4m*2#a9|Y">valeurRecue</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="@8|rrx/f:A@hi:E$?~BP">
+                                <field name="NUM">3</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="display_galaxia_led_set_colors" id="coc[%8A.JTlNZj~#zUGo">
+                            <value name="RED">
+                              <shadow type="math_number" id="cyU.VCv;,27[ihe@:,Pl">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                            <value name="GREEN">
+                              <shadow type="math_number" id="c23k#.#OcW-2Q/4S/RHH">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="BLUE">
+                              <shadow type="math_number" id="2qSw-)OY5%VH{sxS-[ip">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="display_galaxia_show" id="dk%=pR|U^S8-/pnXWn1X">
+                                <value name="VALUE">
+                                  <shadow type="text" id="OuFj1J(p;3b#w;|sr1T]">
+                                    <field name="TEXT">Tu as joué : Pierre</field>
+                                  </shadow>
+                                  <block type="text_join" id="`c3[pyRWnjX=kCfryF^r">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="o.~r/P8%`F=5$yzVg%6K">
+                                        <field name="TEXT">Feuille | </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="text" id="V;d%2@;@O@GWq}-82a,@">
+                                        <field name="TEXT">Ciseaux</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <value name="IF1">
+                          <block type="logic_compare" id="33lN,:~iDwSd||_d]{A%">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id="S}O1AwF?y{^I;_7%[3K$">
+                                <field name="VAR" id="H8)g%n2u;(v4m*2#a9|Y">valeurRecue</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="ygvG4]Y|JL.%8xD~O!}7">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO1">
+                          <block type="display_galaxia_led_set_colors" id="*uDINFYk%jm_yq`Y]/]#">
+                            <value name="RED">
+                              <shadow type="math_number" id="6`,pDTsS+ZAL*+vdtDQ`">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="GREEN">
+                              <shadow type="math_number" id=")smIG*cO|q|f+xq76Q.9">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                            <value name="BLUE">
+                              <shadow type="math_number" id="^dk8Q~d#Tx~fxSth#De^">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="display_galaxia_show" id="4-0gLogO!oqK;O@M4t%d">
+                                <value name="VALUE">
+                                  <shadow type="text">
+                                    <field name="TEXT">Tu as joué : Pierre</field>
+                                  </shadow>
+                                  <block type="text_join" id="FKJt:n7`sA22l}p[n7JD">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="1rMhjxSK=5O(p`:0{-J_">
+                                        <field name="TEXT">Feuille | </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="text" id="@g{{y/(:m9zK?GGloijp">
+                                        <field name="TEXT">Pierre</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <statement name="ELSE">
+                          <block type="display_galaxia_led_set_colors" id="y3XUOKtAEu4*|hMv.:WO">
+                            <value name="RED">
+                              <shadow type="math_number" id="IkQ}I@+{3tfN:7UBH{}h">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="GREEN">
+                              <shadow type="math_number" id=",N_4K6e8[6@y3|{r%~9P">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="BLUE">
+                              <shadow type="math_number" id="2fTTG--1)vSEA.$6`[!L">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="display_galaxia_show" id="I~p70BGWDWk!Zw4);(*}">
+                                <value name="VALUE">
+                                  <shadow type="text">
+                                    <field name="TEXT">Tu as joué : Pierre</field>
+                                  </shadow>
+                                  <block type="text_join" id="LI_+%Q~RSRE~Ctaj126j">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="(WMJa%x*Ef=GPTs14{dd">
+                                        <field name="TEXT">Feuille | </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="text" id="2XKk1),$DLC|r-O!VcL2">
+                                        <field name="TEXT">Feuille</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                    <value name="IF2">
+                      <block type="logic_compare" id="q#Ly0P{rx.%d^_XPBxm#">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="Z6yuHr{qc9[l8ps~8L{^">
+                            <field name="VAR" id="b|0sctE.ZBjLL}Ty]-,!">tuasjoue</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="5T8oIs)MI+4do{`auYYQ">
+                            <field name="NUM">3</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO2">
+                      <block type="controls_if" id="k++uQgaj6#j/9z~k}G(,">
+                        <mutation elseif="1" else="1"></mutation>
+                        <value name="IF0">
+                          <block type="logic_compare" id=":,S;U/?%9o4+/^`ABQ`R">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id="_,J}0C~lH8Wb/n/N%B[J">
+                                <field name="VAR" id="H8)g%n2u;(v4m*2#a9|Y">valeurRecue</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="PsO-ZO43C4i^`4?PWV/=">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="display_galaxia_led_set_colors" id="YZ~K1?pYHvz4st$sQWl3">
+                            <value name="RED">
+                              <shadow type="math_number" id=")v)sOHMZ4=::2sxyTl@x">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                            <value name="GREEN">
+                              <shadow type="math_number" id="^Rlxp9LJlcUQ?c`d;e?d">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="BLUE">
+                              <shadow type="math_number" id="Q26=$[eAk~#n|OTcD|_~">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="display_galaxia_show" id="jb`=Lg/d;ih$PBDmvr01">
+                                <value name="VALUE">
+                                  <shadow type="text" id=";QT%{9lvcESy~!;E#j2T">
+                                    <field name="TEXT">Tu as joué : Pierre</field>
+                                  </shadow>
+                                  <block type="text_join" id="].:%5b%kev[9arVEa0?j">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="IEM{lL?m]S3J#7UAF2+t">
+                                        <field name="TEXT">Ciseaux | </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="text" id="jB.g,y4wbZ5~m$$iJ+d*">
+                                        <field name="TEXT">Pierre</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <value name="IF1">
+                          <block type="logic_compare" id="91g=O][y.}_7M)m;`|[,">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id="9nrX:$:z4^y:IK`QyQ-9">
+                                <field name="VAR" id="H8)g%n2u;(v4m*2#a9|Y">valeurRecue</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="GaqLVsOHVW^{(851tS],">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO1">
+                          <block type="display_galaxia_led_set_colors" id="9oXx;Wyd]2|qqED64I3N">
+                            <value name="RED">
+                              <shadow type="math_number" id="vcX8pFEj`):B6qp@~Vw[">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="GREEN">
+                              <shadow type="math_number" id="9r!0}kbe6nW5lkp+2dW4">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                            <value name="BLUE">
+                              <shadow type="math_number" id="jqM6Ry9z3uK?w~~(sEQD">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="display_galaxia_show" id="?C{K_lcar[gDpba,|M7/">
+                                <value name="VALUE">
+                                  <shadow type="text">
+                                    <field name="TEXT">Tu as joué : Pierre</field>
+                                  </shadow>
+                                  <block type="text_join" id="|pV;g~oynNA]QAr{+#;-">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="fvO!+K$4(|1??hWKIIlR">
+                                        <field name="TEXT">Ciseaux | </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="text" id=".J1=_0GyW-]0PW@%TCz6">
+                                        <field name="TEXT">Feuille</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <statement name="ELSE">
+                          <block type="display_galaxia_led_set_colors" id="=SFeY7~9nL|dgCB(K:9$">
+                            <value name="RED">
+                              <shadow type="math_number" id="6UPrGc^AUdeD@mF^2B@z">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="GREEN">
+                              <shadow type="math_number" id="#BqyL6^DQ[WP^ahbSeB]">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="BLUE">
+                              <shadow type="math_number" id=";0[Pz6s25,=@~~X8mUv;">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="display_galaxia_show" id="2xBM8=/3J[-XLv@i|G:q">
+                                <value name="VALUE">
+                                  <shadow type="text">
+                                    <field name="TEXT">Tu as joué : Pierre</field>
+                                  </shadow>
+                                  <block type="text_join" id="y-BdtrGXc}NlfOha(|H]">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id=")p{G6iAIb?R%KZQvmF!L">
+                                        <field name="TEXT">Ciseaux | </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="text" id="Pl[$rS5kQ`Kz)tF$A5%G">
+                                        <field name="TEXT">Ciseaux</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
                   </block>
                 </next>
               </block>
@@ -217,5 +615,21 @@
         </next>
       </block>
     </statement>
+  </block>
+  <block type="sensors_galaxia_onAccelerometerEvent" id="P8!iT{}Hzy]W#k.*vpKV" x="1217" y="445">
+    <field name="GESTURE">up</field>
+    <statement name="DO">
+      <block type="display_galaxia_clear" id="pDjQ5P*gf@9p[Va#[|(X"></block>
+    </statement>
+  </block>
+  <block type="communication_galaxia_onRadioReceived" id="neEB#@q|mH@wgSe(J@F_" disabled="true" x="-343" y="782">
+    <field name="VALUE" id="H8)g%n2u;(v4m*2#a9|Y">valeurRecue</field>
+  </block>
+  <block type="communication_galaxia_radioSendValue" id="kIt9g?h2qrdJZ;,$+%B-" disabled="true" x="-183" y="944">
+    <value name="VALUE">
+      <shadow type="text" id="U$Cz9v6DBl@XI0MtHFos">
+        <field name="TEXT">feuille</field>
+      </shadow>
+    </value>
   </block>
 </xml>
